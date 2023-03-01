@@ -7,8 +7,10 @@ namespace Quest
 {
     class Program
     {
+        
         static void Main(string[] args)
         {
+            repeat:
             Console.Write("What is this adventurers name?");
             string adventurerName = Console.ReadLine();
             // Create a few challenges for our Adventurer's quest
@@ -77,6 +79,16 @@ namespace Quest
             else
             {
                 Console.WriteLine("I guess you did...ok? ...sorta. Still, you should get out of my sight.");
+            }
+            Console.Write("Want to go on another adventure? (y/n)");
+            string answer = Console.ReadLine();
+            if (answer == "y")
+            {
+                 goto repeat;
+            }
+            if (answer == "n") 
+            {
+                Console.WriteLine("Thanks for playing!");
             }
         }
     }
